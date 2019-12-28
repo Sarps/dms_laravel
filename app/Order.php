@@ -12,7 +12,7 @@ class Order extends Model
     }
 
     public function partSummary() {
-        return $this->morphToMany(Part::class, 'purchasable')->limit(3);
+        return $this->parts()->take(3);
     }
 
     public function supplier() {

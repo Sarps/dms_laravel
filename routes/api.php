@@ -38,6 +38,8 @@ Route::middleware('auth:api')->group(function () {
 
     Route::apiResource('suppliers', SupplierController::class);
 
+    Route::apiResource('categories', CategoryController::class);
+
 });
 
 

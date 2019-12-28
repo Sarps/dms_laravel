@@ -16,6 +16,7 @@ class CreatePartManufacturersTable extends Migration
         Schema::create('part_manufacturers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string("name");
+            $table->string("location")->nullable();
             $table->timestamps();
         });
     }

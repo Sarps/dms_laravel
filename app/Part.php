@@ -11,7 +11,7 @@ class Part extends Model implements HasMedia
     use HasMediaTrait;
 
     protected $fillable = [
-        'number', 'name', 'retail_price', 'cost_price', 'category_id',
+        'number', 'name', 'retail_price', 'cost_price', 'category_id', 'supplier_id',
         'manufacturer_id', 'model_id', 'franchise_id', 'quantity', 'reorder',
         'description'
     ];
@@ -20,7 +20,7 @@ class Part extends Model implements HasMedia
         "manufacturer_id", "model_id", "franchise_id", "category_id", "supplier_id"
     ];
 
-    public function media() {
+    public function image() {
         return $this->morphOne(config('medialibrary.media_model'), 'model');
     }
 

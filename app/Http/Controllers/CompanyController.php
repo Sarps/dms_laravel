@@ -27,9 +27,9 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return Company::paginate();
+        return Company::paginate($request->get('per_page'));
     }
 
     /**

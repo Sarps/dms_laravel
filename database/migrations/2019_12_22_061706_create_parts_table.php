@@ -31,6 +31,7 @@ class CreatePartsTable extends Migration
             $table->foreign("supplier_id")->references("id")->on("suppliers");
             $table->bigInteger("quantity");
             $table->bigInteger("reorder")->nullable();
+            $table->string("description")->nullable();
             $table->timestamps();
         });
     }

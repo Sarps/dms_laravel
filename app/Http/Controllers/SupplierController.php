@@ -17,9 +17,9 @@ class SupplierController extends Controller
         return Supplier::all();
     }
 
-    public function datatables()
+    public function datatables(Request $request)
     {
-        return Supplier::paginate();
+        return Supplier::paginate($request->get('per_page'));
     }
 
     /**
@@ -58,7 +58,11 @@ class SupplierController extends Controller
     public function show(Supplier $supplier)
     {
         //
-        $supplier->load(["parts.manufacturer", "parts.model", "parts.category", "parts.media"]);
+        $supplier->load(["parts.manufacturer", "parts.model", "parts.category", "parts.image"]);
+        $supplier->setRelation('parts', $supplier->parts->map(function ($part) {
+            $part->setAttribute('image_url', $part->image == null ? '' : $part->image->getFullUrl());
+            return $part;
+        }));
         return $supplier;
     }
 

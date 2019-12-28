@@ -15,14 +15,15 @@ class PartController extends Controller
      */
     public function index()
     {
-        //
         $parts = Part::with([
             "manufacturer", "model", "franchise", "category", "supplier", "media"
         ])->get();
-        return $parts->map(function ($part) {
-            $part->media = $part->media == null ? '' : $part->media->getFullUrl();
+        $parts->load("image");
+        $parts = $parts->map(function ($part) {
+            $part->setAttribute('image_url', $part->image == null ? '' : $part->image->getFullUrl());
             return $part;
         });
+        return $parts;
     }
 
     /**
@@ -53,7 +54,8 @@ class PartController extends Controller
             'manufacturer_id' => 'required|exists:part_manufacturers,id',
             'model_id' => 'required|exists:part_models,id',
             'franchise_id' => 'exists:part_franchises,id',
-            'quantity' => 'required|integer',
+            'supplier_id' => 'exists:suppliers,id',
+            'quantity' => 'required|numeric',
             'reorder' => 'numeric',
             'description' => 'string'
         ));
@@ -113,5 +115,6 @@ class PartController extends Controller
     public function destroy(Part $part)
     {
         //
+        $part->delete();
     }
 }

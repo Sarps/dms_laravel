@@ -11,6 +11,12 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Category::insert([
+            ['name' => 'Body parts'],
+            ['name' => 'Maintenance'],
+            ['name' => 'Repair'],
+            ['name' => 'Accesories'],
+            ['name' => 'Generic'],
+        ]);
     }
 }

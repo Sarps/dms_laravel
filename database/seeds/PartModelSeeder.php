@@ -12,5 +12,11 @@ class PartModelSeeder extends Seeder
     public function run()
     {
         //
+        \App\PartModel::insert([
+            ['name' => 'Camry', 'manufacturer_id' => 1], // Toyota
+            ['name' => 'Explorer', 'manufacturer_id' => 3], // Ford
+            ['name' => 'Pride', 'manufacturer_id' => 5], // KIA
+            ['name' => 'Generic', 'manufacturer_id' => 7], // Generic
+        ]);
     }
 }

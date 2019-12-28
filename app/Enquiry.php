@@ -12,7 +12,7 @@ class Enquiry extends Model
     }
 
     public function partSummary() {
-        return $this->morphToMany(Part::class, 'purchasable');
+        return $this->parts()->take(3);
     }
 
     public function supplier() {

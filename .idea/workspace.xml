@@ -2,9 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35801ece-9615-414b-b888-170385cdb2e6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/34f46926-452f-414a-8693-6f61addc3d14.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/34f46926-452f-414a-8693-6f61addc3d14.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Enquiry.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Enquiry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompanyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Part.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Part.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_22_061620_create_part_manufacturers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_22_061620_create_part_manufacturers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_22_061631_create_part_models_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_22_061631_create_part_models_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_22_061658_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_22_061658_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_22_061706_create_parts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_22_061706_create_parts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CategorySeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategorySeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/PartManufacturerSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PartManufacturerSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/PartModelSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PartModelSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/SupplierSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/SupplierSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +66,7 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="dms: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="companies: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="parts: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -225,7 +241,22 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@73796be7" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@73796be7" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@a16378d" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@73796be7" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@b9bf8d7" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -250,7 +281,8 @@
       <workItem from="1577479837958" duration="2186000" />
       <workItem from="1577483224510" duration="1763000" />
       <workItem from="1577486891885" duration="481000" />
-      <workItem from="1577514684635" duration="4758000" />
+      <workItem from="1577514684635" duration="5638000" />
+      <workItem from="1577543953527" duration="5925000" />
     </task>
     <servers />
   </component>
