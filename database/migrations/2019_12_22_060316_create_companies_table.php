@@ -18,8 +18,8 @@ class CreateCompaniesTable extends Migration
             $table->string("name");
             $table->string("address");
             $table->string("contact");
-            $table->string("motto");
-            $table->string("skin");
+            $table->string("motto")->nullable();
+            $table->string("skin")->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

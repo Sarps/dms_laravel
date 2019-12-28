@@ -14,8 +14,12 @@ class SupplierController extends Controller
      */
     public function index()
     {
-        //
         return Supplier::all();
+    }
+
+    public function datatables()
+    {
+        return Supplier::paginate();
     }
 
     /**
@@ -36,7 +40,13 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "name" => "required|string",
+            "address" => "required|string",
+            "contact" => "required|string"
+        ]);
+
+        Supplier::create($request->all());
     }
 
     /**
@@ -72,7 +82,13 @@ class SupplierController extends Controller
      */
     public function update(Request $request, Supplier $supplier)
     {
-        //
+        $request->validate([
+            "name" => "string",
+            "address" => "string",
+            "contact" => "string"
+        ]);
+
+        $supplier->update($request->all());
     }
 
     /**
@@ -83,6 +99,6 @@ class SupplierController extends Controller
      */
     public function destroy(Supplier $supplier)
     {
-        //
+        $supplier->delete();
     }
 }
