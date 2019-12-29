@@ -54,6 +54,18 @@ class EnquiryController extends Controller
         return $enquiry;
     }
 
+    public function transfer(Enquiry $enquiry) {
+        $order = new Order();
+        $order->supplier_id = $enquiry->supplier_id;
+        $order->user_id = Auth::id();
+        $order->type = "INDIRECT";
+        $order->save();
+        $order->parts()->attach($enquiry->parts);
+        $enquiry->parts()->detach();
+        $enquiry->delete();
+        return $order;
+    }
+
     /**
      * Display the specified resource.
      *
@@ -63,6 +75,8 @@ class EnquiryController extends Controller
     public function show(Enquiry $enquiry)
     {
         //
+        $enquiry->load(["parts.manufacturer", "parts.model", "parts.category", "parts.image", "supplier"]);
+        return $enquiry;
     }
 
     /**
@@ -85,7 +99,13 @@ class EnquiryController extends Controller
      */
     public function update(Request $request, Enquiry $enquiry)
     {
-        //
+        /** @var \App\User $user */
+        $user = User::first();// Auth::user();
+        $enquiry->user()->associate($user);
+        $enquiry->save();
+        $enquiry->parts()->detach();
+        $enquiry->parts()->attach($request->parts);
+        return $enquiry;
     }
 
     /**

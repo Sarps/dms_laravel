@@ -85,6 +85,14 @@ class OrderController extends Controller
     public function update(Request $request, Order $order)
     {
         //
+        /** @var User $user */
+        $user = User::first();// Auth::user();
+        /** @var Order $order */
+        $order->user()->associate($user);
+        $order->save();
+        $order->parts()->detach();
+        $order->parts()->attach($request->parts);
+        return $order;
     }
 
     /**

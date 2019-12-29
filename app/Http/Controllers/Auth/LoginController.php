@@ -53,6 +53,7 @@ class LoginController extends Controller
         $user = Auth::user();
         $user->api_token = Str::uuid();
         $user->save();
+        $user->load('branch.company');
         return $user;
     }
 
