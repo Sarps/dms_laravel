@@ -33,6 +33,7 @@ class CreatePartsTable extends Migration
             $table->bigInteger("reorder")->nullable();
             $table->string("description")->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -12,20 +12,19 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        /** @var User $user */
-        $user = User::create([
-                'name' => 'Emmanuel Sarpong',
-                'email' => 'esarpong51@gmail.com',
-                'password' => Hash::make('secret')
-        ]);
-        $user->branch()->associate(\App\Branch::first());
-        $user->save();
-
-//        User::create([
-//            'name' => 'Emmanuel Sarpong',
-//            'email' => 'esarpong51@gmail.com',
-//            'password' => Hash::make('secret')
-//        ]);
+        $users = \App\Branch::first()->users()
+            ->createMany([
+                [
+                    'name' => 'Emmanuel Sarpong',
+                    'email' => 'esarpong51@gmail.com',
+                    'password' => Hash::make('secret')
+                ],
+                [
+                    'name' => 'Efisah Buckman',
+                    'email' => 'thatkutekwame@gmail.com',
+                    'password' => Hash::make('efisah')
+                ]
+            ]);
 
     }
 }

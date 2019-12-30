@@ -17,11 +17,13 @@ class CreateOrdersTable extends Migration
             $table->bigIncrements('id');
             $table->string("type");
             $table->string("status")->default("UNCONFIRMED");
+            $table->timestamp("due_date")->nullable();
             $table->unsignedBigInteger("supplier_id");
             $table->unsignedBigInteger("user_id");
             $table->foreign("supplier_id")->references("id")->on("suppliers");
             $table->foreign("user_id")->references("id")->on("users");
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

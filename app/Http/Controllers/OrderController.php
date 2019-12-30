@@ -45,7 +45,7 @@ class OrderController extends Controller
         /** @var User $user */
         $user = User::first();// Auth::user();
         /** @var Order $order */
-        $order = new Order();
+        $order = new Order($request->only('type', 'due_date'));
         $order->user()->associate($user);
         $order->supplier()->associate($supplier);
         $order->save();

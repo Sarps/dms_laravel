@@ -19,6 +19,7 @@ class CreateContactsTable extends Migration
             $table->string("type");
             $table->string("value");
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

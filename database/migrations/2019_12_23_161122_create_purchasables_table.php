@@ -15,12 +15,15 @@ class CreatePurchasablesTable extends Migration
     {
         Schema::create('purchasables', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger("part_id");
             $table->morphs("purchasable");
-            $table->foreign("part_id")->references("id")->on("parts");
-            $table->bigInteger("quantity")->nullable();
+            $table->unsignedBigInteger("part_id");
+            $table->bigInteger("quantity")->default(0);
+            $table->bigInteger("delivered")->default(0);
             $table->double("price")->nullable();
             $table->timestamps();
+
+            $table->foreign("part_id")->references("id")->on("parts");
+
         });
     }
 

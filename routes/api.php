@@ -19,8 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Auth::routes();
 
-Route::get('suppliers/dt', 'SupplierController@datatables');
-Route::get('companies/dt', 'CompanyController@datatables');
 
 Route::middleware('auth:api')->group(function () {
 
@@ -34,11 +32,15 @@ Route::middleware('auth:api')->group(function () {
 
     Route::apiResource('models', PartModelController::class);
 
+    Route::get('companies/dt', 'CompanyController@datatables');
     Route::apiResource('companies', CompanyController::class);
 
+    Route::get('suppliers/dt', 'SupplierController@datatables');
     Route::apiResource('suppliers', SupplierController::class);
 
     Route::apiResource('categories', CategoryController::class);
+
+    Route::apiResource('receipt', CategoryController::class);
 
 });
 

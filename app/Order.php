@@ -3,10 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Order extends Model
 {
-    //
+    use SoftDeletes;
+
+    protected $fillable = [
+        "type", "due_date"
+    ];
+
     public function parts() {
         return $this->morphToMany(Part::class, 'purchasable');
     }

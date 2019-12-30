@@ -19,6 +19,7 @@ class CreatePartModelsTable extends Migration
             $table->unsignedBigInteger("manufacturer_id")->nullable();
             $table->foreign("manufacturer_id")->references("id")->on("part_manufacturers");
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

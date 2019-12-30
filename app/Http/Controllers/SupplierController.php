@@ -61,6 +61,7 @@ class SupplierController extends Controller
         $supplier->load(["parts.manufacturer", "parts.model", "parts.category", "parts.image"]);
         $supplier->setRelation('parts', $supplier->parts->map(function ($part) {
             $part->setAttribute('image_url', $part->image == null ? '' : $part->image->getFullUrl());
+            $part->setRelation('image', null);
             return $part;
         }));
         return $supplier;

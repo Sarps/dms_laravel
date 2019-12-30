@@ -18,6 +18,7 @@ class CreatePartManufacturersTable extends Migration
             $table->string("name");
             $table->string("location")->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
