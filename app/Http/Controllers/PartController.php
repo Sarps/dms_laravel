@@ -114,7 +114,6 @@ class PartController extends Controller
      */
     public function destroy(Part $part)
     {
-        //
         $part->delete();
     }
 }

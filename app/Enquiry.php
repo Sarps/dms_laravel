@@ -10,7 +10,8 @@ class Enquiry extends Model
     use SoftDeletes;
 
     public function parts() {
-        return $this->morphToMany(Part::class, 'purchasable');
+        return $this->morphToMany(Part::class, 'purchasable')
+            ->withPivot('quantity');
     }
 
     public function partSummary() {

@@ -14,7 +14,8 @@ class Order extends Model
     ];
 
     public function parts() {
-        return $this->morphToMany(Part::class, 'purchasable');
+        return $this->morphToMany(Part::class, 'purchasable')
+            ->withPivot('quantity', 'price', 'delivered');
     }
 
     public function partSummary() {
@@ -27,5 +28,9 @@ class Order extends Model
 
     public function user() {
         return $this->belongsTo(User::class);
+    }
+
+    public function receipts() {
+        return $this->hasMany(Receipt::class);
     }
 }

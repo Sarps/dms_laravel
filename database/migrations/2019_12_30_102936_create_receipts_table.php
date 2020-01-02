@@ -15,7 +15,7 @@ class CreateReceiptsTable extends Migration
     {
         Schema::create('receipts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string("order_id");
+            $table->unsignedBigInteger("order_id");
             $table->timestamps();
             $table->softDeletes();
 

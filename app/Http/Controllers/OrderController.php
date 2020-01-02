@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Enquiry;
 use App\Order;
+use App\Receipt;
 use App\Supplier;
 use App\User;
 use Illuminate\Http\Request;
@@ -19,7 +20,13 @@ class OrderController extends Controller
     public function index()
     {
         //
-        return Order::with(["partSummary", "supplier"])->withCount("parts")->get();
+        return Order::doesntHave('receipts')->with(["partSummary", "supplier"])->withCount("parts")->get();
+    }
+
+    public function backorders()
+    {
+        //
+        return Order::has('receipts')->with(["partSummary", "supplier"])->withCount("parts")->get();
     }
 
     /**
@@ -61,7 +68,13 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        $order->load(["parts.manufacturer", "parts.model", "parts.category", "parts.image", "supplier"]);
+        $order->setRelation('parts', $order->parts->map(function ($part) {
+            $part->setAttribute('image_url', $part->image == null ? '' : $part->image->getFullUrl());
+            $part->setRelation('image', null);
+            return $part;
+        }));
+        return $order;
     }
 
     /**
@@ -84,7 +97,6 @@ class OrderController extends Controller
      */
     public function update(Request $request, Order $order)
     {
-        //
         /** @var User $user */
         $user = User::first();// Auth::user();
         /** @var Order $order */
@@ -93,6 +105,14 @@ class OrderController extends Controller
         $order->parts()->detach();
         $order->parts()->attach($request->parts);
         return $order;
+    }
+
+    public function receive(Request $request, Order $order) {
+        /** @var Receipt $receipt */
+        $receipt = $order->receipts()->create();
+        $order->parts()->syncWithoutDetaching($request->order);
+        $receipt->parts()->attach($request->receipt);
+        return $receipt;
     }
 
     /**
@@ -104,5 +124,6 @@ class OrderController extends Controller
     public function destroy(Order $order)
     {
         //
+        $order->delete();
     }
 }

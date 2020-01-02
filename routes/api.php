@@ -19,13 +19,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Auth::routes();
 
-
 Route::middleware('auth:api')->group(function () {
 
     Route::apiResource('parts', PartController::class);
 
     Route::apiResource('enquiries', EnquiryController::class);
 
+    Route::put('orders/receive/{order}', 'OrderController@receive');
+    Route::get('orders/backorders', 'OrderController@backorders');
     Route::apiResource('orders', OrderController::class);
 
     Route::apiResource('manufacturers', PartManufacturerController::class);
@@ -40,7 +41,9 @@ Route::middleware('auth:api')->group(function () {
 
     Route::apiResource('categories', CategoryController::class);
 
-    Route::apiResource('receipt', CategoryController::class);
+    Route::apiResource('receipts', ReceiptController::class);
+
+    Route::get('trash', 'InventoryBinController@index');
 
 });
 
