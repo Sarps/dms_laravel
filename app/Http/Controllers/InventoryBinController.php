@@ -16,10 +16,12 @@ use App\Supplier;
 use App\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class InventoryBinController extends Controller
 {
-    //
+
     public function index() {
         $items = collect([])
             ->merge(Company::onlyTrashed()->get())
@@ -35,8 +37,19 @@ class InventoryBinController extends Controller
             ->merge(Supplier::onlyTrashed()->get())
             ->merge(User::onlyTrashed()->get());
 
-        $items->sortByDesc('created_at');
+        $items->sortByDesc('deleted_at');
+
+        $items = $items->map(function ($item) {
+            $item->setAttribute('type', Str::singular($item->getTable()));
+            return $item;
+        });
 
         return $items;
+    }
+
+    public function restore(Request $request) {
+        DB::table(Str::plural($request->get('type')))
+            ->where('id', $request->get('id'))
+            ->update(['deleted_at' => null]);
     }
 }

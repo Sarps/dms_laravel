@@ -43,8 +43,9 @@ Route::middleware('auth:api')->group(function () {
 
     Route::apiResource('receipts', ReceiptController::class);
 
-    Route::get('trash', 'InventoryBinController@index');
 
 });
 
+Route::get('trash', 'InventoryBinController@index');
+Route::post('trash', 'InventoryBinController@restore');
 
