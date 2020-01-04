@@ -40,7 +40,7 @@ class InventoryBinController extends Controller
         $items->sortByDesc('deleted_at');
 
         $items = $items->map(function ($item) {
-            $item->setAttribute('type', Str::singular($item->getTable()));
+            $item->setAttribute('model_type', Str::singular($item->getTable()));
             return $item;
         });
 

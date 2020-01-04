@@ -12,4 +12,8 @@ class PartManufacturer extends Model
     protected $hidden = [
         "created_at", "updated_at"
     ];
+
+    public function models() {
+        return $this->hasMany(PartModel::class, 'manufacturer_id');
+    }
 }

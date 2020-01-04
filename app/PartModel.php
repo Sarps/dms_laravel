@@ -12,4 +12,8 @@ class PartModel extends Model
     protected $hidden = [
         "created_at", "updated_at"
     ];
+
+    public function manufacturer() {
+        return $this->belongsTo(PartManufacturer::class, 'manufacturer_id');
+    }
 }

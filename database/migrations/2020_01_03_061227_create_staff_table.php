@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddApiTokenToUsersTable extends Migration
+class CreateStaffTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class AddApiTokenToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('api_token', 80)->after('password')
-                ->unique()
-                ->nullable()
-                ->default(null);
+        Schema::create('staff', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger("branch_id")->nullable();
+            $table->foreign("branch_id")->references("id")->on("branches");
+            $table->timestamps();
         });
     }
 
@@ -28,8 +28,6 @@ class AddApiTokenToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('staff');
     }
 }
