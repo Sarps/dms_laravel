@@ -107,6 +107,12 @@ class OrderController extends Controller
         return $order;
     }
 
+    public function confirm(Request $request, Order $order) {
+        $order->status = 'CONFIRMED';
+        $order->save();
+        return $order;
+    }
+
     public function receive(Request $request, Order $order) {
         /** @var Receipt $receipt */
         $receipt = $order->receipts()->create();

@@ -25,6 +25,7 @@ Route::middleware('auth:api')->group(function () {
 
     Route::apiResource('enquiries', EnquiryController::class);
 
+    Route::put('orders/confirm/{order}', 'OrderController@confirm');
     Route::put('orders/receive/{order}', 'OrderController@receive');
     Route::get('orders/backorders', 'OrderController@backorders');
     Route::apiResource('orders', OrderController::class);
@@ -43,9 +44,8 @@ Route::middleware('auth:api')->group(function () {
 
     Route::apiResource('receipts', ReceiptController::class);
 
+    Route::get('trash', 'InventoryBinController@index');
+    Route::post('trash', 'InventoryBinController@restore');
 
 });
-
-Route::get('trash', 'InventoryBinController@index');
-Route::post('trash', 'InventoryBinController@restore');
 
