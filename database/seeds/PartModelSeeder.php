@@ -16,7 +16,7 @@ class PartModelSeeder extends Seeder
             ['name' => 'Camry', 'manufacturer_id' => 1], // Toyota
             ['name' => 'Explorer', 'manufacturer_id' => 3], // Ford
             ['name' => 'Pride', 'manufacturer_id' => 5], // KIA
-            ['name' => 'Generic', 'manufacturer_id' => 7], // Generic
+            ['name' => 'Other Model', 'manufacturer_id' => 7], // Others
         ]);
     }
 }

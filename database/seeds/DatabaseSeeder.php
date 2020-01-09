@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PartManufacturerSeeder::class);
         $this->call(PartModelSeeder::class);
         $this->call(SupplierSeeder::class);
+        $this->call(MeasurementUnitSeeder::class);
     }
 }

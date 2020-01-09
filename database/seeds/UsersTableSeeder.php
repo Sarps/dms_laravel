@@ -12,24 +12,30 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $users = \App\Branch::first()->users()
-            ->createMany([
-                [
-                    'name' => 'Emmanuel Sarpong',
-                    'email' => 'esarpong51@gmail.com',
-                    'password' => Hash::make('secret')
-                ],
-                [
-                    'name' => 'Efisah Buckman',
-                    'email' => 'thatkutekwame@gmail.com',
-                    'password' => Hash::make('efisah')
-                ],
-                [
-                    'name' => 'Richard Anane',
-                    'email' => 'ranane@gmail.com',
-                    'password' => Hash::make('rich')
-                ],
-            ]);
-
+        /** @var \Illuminate\Support\Collection $users */
+        $users = collect([
+            [
+                'name' => 'Emmanuel Sarpong',
+                'email' => 'esarpong51@gmail.com',
+                'password' => 'secret'
+            ],
+            [
+                'name' => 'Efisah Buckman',
+                'email' => 'thatkutekwame@gmail.com',
+                'password' => 'efisah'
+            ],
+            [
+                'name' => 'Richard Anane',
+                'email' => 'ranane@gmail.com',
+                'password' => 'rich'
+            ],
+        ]);
+        \App\Company::first()->users()->createMany($users);
+//        $branch = \App\Branch::first();
+//        foreach ($users as $user) {
+//            /** @var \App\Staff $staff */
+//            $staff = $branch->staff()->create();
+//            $staff->user()->create($user);
+//        };
     }
 }

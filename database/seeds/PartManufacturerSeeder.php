@@ -19,7 +19,7 @@ class PartManufacturerSeeder extends Seeder
             ['name' => 'BMW', 'location' => 'Germany'],
             ['name' => 'KIA', 'location' => 'Korea'],
             ['name' => 'Suzuki', 'location' => 'Japan'],
-            ['name' => 'Generic', 'location' => 'Unknown'],
+            ['name' => 'Other Manufacturer', 'location' => 'Unknown'],
         ]);
     }
 }

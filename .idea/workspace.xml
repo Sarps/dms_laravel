@@ -2,8 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35801ece-9615-414b-b888-170385cdb2e6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/SARPONG.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_ide_helper_models.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MeasurementUnitController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/MeasurementUnit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Observers/UserObserver.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/MeasurementUnitFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_09_160152_add_userable_to_users_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_09_211611_create_measurement_units_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/MeasurementUnitSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/34f46926-452f-414a-8693-6f61addc3d14.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/34f46926-452f-414a-8693-6f61addc3d14.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/.phpstorm.meta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Branch.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Branch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StaffController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StaffController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Staff.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Staff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Vehicle.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Vehicle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_22_060316_create_companies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_11_060316_create_companies_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_03_061220_create_customers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_03_061230_create_customers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_03_061227_create_staff_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_03_061227_create_staff_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_03_061238_create_vehicles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_03_061238_create_vehicles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CategorySeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategorySeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/PartManufacturerSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PartManufacturerSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/PartModelSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PartModelSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/SupplierSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/SupplierSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,27 +76,6 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="dms: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="dms: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="companies: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="dms: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="orders: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="dms: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="purchasables: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -201,8 +212,11 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1VNTwFMLfxX6dQqXY7rNryJKBNk" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql&#10;postgresql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -281,7 +295,10 @@
       <workItem from="1577606372078" duration="5108000" />
       <workItem from="1577654203438" duration="9072000" />
       <workItem from="1577951038663" duration="15659000" />
-      <workItem from="1578101771108" duration="4292000" />
+      <workItem from="1578101771108" duration="4732000" />
+      <workItem from="1578352951276" duration="257000" />
+      <workItem from="1578427658868" duration="2818000" />
+      <workItem from="1578573086424" duration="10199000" />
     </task>
     <servers />
   </component>
@@ -300,5 +317,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

@@ -16,7 +16,7 @@ class CategorySeeder extends Seeder
             ['name' => 'Maintenance'],
             ['name' => 'Repair'],
             ['name' => 'Accesories'],
-            ['name' => 'Generic'],
+            ['name' => 'Other Category'],
         ]);
     }
 }

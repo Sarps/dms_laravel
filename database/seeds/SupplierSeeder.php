@@ -14,7 +14,7 @@ class SupplierSeeder extends Seeder
         //
         \App\Supplier::insert([
             ['name' => 'Toyota Ghana', 'address' => 'Motorway, Accra', 'contact' => '06789456'],
-            ['name' => 'Generic', 'address' => 'Unknown', 'contact' => 'Unknown'],
+            ['name' => 'Other Supplier', 'address' => 'Unknown', 'contact' => 'Unknown'],
         ]);
     }
 }

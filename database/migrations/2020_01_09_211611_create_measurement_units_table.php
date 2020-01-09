@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStaffTable extends Migration
+class CreateMeasurementUnitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateStaffTable extends Migration
      */
     public function up()
     {
-        Schema::create('staff', function (Blueprint $table) {
+        Schema::create('measurement_units', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger("branch_id")->nullable();
-            $table->foreign("branch_id")->references("id")->on("branches");
+            $table->string('name')->unique();
             $table->timestamps();
-
-            $table->softDeletes();
         });
     }
 
@@ -30,6 +27,6 @@ class CreateStaffTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('staff');
+        Schema::dropIfExists('measurement_units');
     }
 }

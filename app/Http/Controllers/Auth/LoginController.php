@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -50,10 +51,11 @@ class LoginController extends Controller
      */
     protected function sendLoginResponse(Request $request)
     {
+        /** @var User $user */
         $user = Auth::user();
         $user->api_token = Str::uuid();
         $user->save();
-        $user->load('branch.company');
+        $user->load('company');
         return $user;
     }
 

@@ -18,4 +18,8 @@ class Company extends Model implements HasMedia
     public function branches() {
         return $this->hasMany(Branch::class);
     }
+
+    public function users() {
+        return $this->hasMany(User::class);
+    }
 }

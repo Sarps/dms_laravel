@@ -47,11 +47,11 @@ class User extends Authenticatable
         return $this->hasMany(Order::class);
     }
 
-    public function branch() {
-        return $this->belongsTo(Branch::class);
+    public function company() {
+        return $this->belongsTo(Company::class);
     }
 
-    public function company() {
-        return $this->branch()->company();
+    public function userable() {
+        return $this->morphTo();
     }
 }

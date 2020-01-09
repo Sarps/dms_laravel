@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Staff;
+use App\MeasurementUnit;
 use Illuminate\Http\Request;
 
-class StaffController extends Controller
+class MeasurementUnitController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,35 +35,16 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), array(
-            'account_name' => 'required|string',
-            'name' => 'required|string',
-            'email' => 'required|string',
-            'address' => 'required|string',
-            'mobile' => 'required|string',
-            'telephone' => 'required|string',
-            'account_type' => 'required|string',
-            'account_ref' => 'required|string',
-            'credit_limit' => 'required|numeric',
-            'tax_type' => 'required|string',
-            'tax_perc' => 'required|numeric',
-            'status' => 'required|string',
-        ));
-        $validator->validate();
-
-        $customer = Staff::create($request->except(['name', 'email', 'password']));
-        $customer->user()->create($request->only(['name', 'email', 'password']));
-
-        return $customer;
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Staff  $staff
+     * @param  \App\MeasurementUnit  $measurementUnit
      * @return \Illuminate\Http\Response
      */
-    public function show(Staff $staff)
+    public function show(MeasurementUnit $measurementUnit)
     {
         //
     }
@@ -71,10 +52,10 @@ class StaffController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Staff  $staff
+     * @param  \App\MeasurementUnit  $measurementUnit
      * @return \Illuminate\Http\Response
      */
-    public function edit(Staff $staff)
+    public function edit(MeasurementUnit $measurementUnit)
     {
         //
     }
@@ -83,10 +64,10 @@ class StaffController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Staff  $staff
+     * @param  \App\MeasurementUnit  $measurementUnit
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Staff $staff)
+    public function update(Request $request, MeasurementUnit $measurementUnit)
     {
         //
     }
@@ -94,10 +75,10 @@ class StaffController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Staff  $staff
+     * @param  \App\MeasurementUnit  $measurementUnit
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Staff $staff)
+    public function destroy(MeasurementUnit $measurementUnit)
     {
         //
     }
