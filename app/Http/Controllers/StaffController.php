@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Company;
 use App\Staff;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,12 @@ class StaffController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        /** @var Company $company */
+        $company = $request->user()->company;
+        $company->load('staff.userable.branch');
+        return $company->staff;
     }
 
     /**

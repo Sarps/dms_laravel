@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Vehicle;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class VehicleController extends Controller
 {
@@ -35,7 +36,23 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), array(
+            'reg_no' => 'required|string',
+            'chasis_no' => 'required|string',
+            'engine_no' => 'required|string',
+            'origin' => 'string',
+            'colour' => 'string',
+            'odometer_unit' => 'string',
+            'customer_id' => 'required|exists:customers,id',
+            'staff_id' => 'required|exists:staff,id',
+            'part_model_id' => 'required|exists:part_models,id',
+            'part_franchise_id' => 'exists:part_franchises,id',
+            'note' => 'string'
+        ));
+        $validator->validate();
+
+        return Vehicle::create($request->all());
+
     }
 
     /**

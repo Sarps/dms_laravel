@@ -2,39 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35801ece-9615-414b-b888-170385cdb2e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/SARPONG.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_ide_helper_models.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MeasurementUnitController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/MeasurementUnit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Observers/UserObserver.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/MeasurementUnitFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_09_160152_add_userable_to_users_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_01_09_211611_create_measurement_units_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/MeasurementUnitSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/34f46926-452f-414a-8693-6f61addc3d14.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/34f46926-452f-414a-8693-6f61addc3d14.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/.phpstorm.meta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_ide_helper_models.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/BackOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/BackOrder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Branch.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Branch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Company.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Contact.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Enquiry.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Enquiry.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StaffController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StaffController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VehicleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VehicleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/MeasurementUnit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/MeasurementUnit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Part.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Part.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/PartFranchise.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/PartFranchise.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/PartManufacturer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/PartManufacturer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/PartModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/PartModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Preference.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Preference.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Purchasable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Purchasable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/PurchaseOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/PurchaseOrder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Receipt.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Receipt.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Staff.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Staff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Supplier.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Supplier.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Vehicle.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Vehicle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_22_060316_create_companies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_11_060316_create_companies_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_03_061220_create_customers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_03_061230_create_customers_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_03_061227_create_staff_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_03_061227_create_staff_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/CustomerFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/CustomerFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_03_061238_create_vehicles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_03_061238_create_vehicles_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/CategorySeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CategorySeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/PartManufacturerSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PartManufacturerSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/PartModelSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PartModelSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/SupplierSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/SupplierSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
@@ -76,6 +72,20 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="dms: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="dms: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="customers: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="dms: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="suppliers: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -222,7 +232,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -298,7 +308,11 @@
       <workItem from="1578101771108" duration="4732000" />
       <workItem from="1578352951276" duration="257000" />
       <workItem from="1578427658868" duration="2818000" />
-      <workItem from="1578573086424" duration="10199000" />
+      <workItem from="1578573086424" duration="11244000" />
+      <workItem from="1578609530858" duration="1909000" />
+      <workItem from="1578737077197" duration="2789000" />
+      <workItem from="1578851174239" duration="3863000" />
+      <workItem from="1578918646397" duration="977000" />
     </task>
     <servers />
   </component>

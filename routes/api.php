@@ -23,6 +23,8 @@ Route::middleware('auth:api')->group(function () {
 
     Route::apiResource('parts', PartController::class);
 
+    Route::apiResource('staff', StaffController::class);
+
     Route::apiResource('enquiries', EnquiryController::class);
 
     Route::put('orders/confirm/{order}', 'OrderController@confirm');
@@ -45,6 +47,8 @@ Route::middleware('auth:api')->group(function () {
     Route::apiResource('receipts', ReceiptController::class);
 
     Route::apiResource('customers', CustomerController::class);
+
+    Route::apiResource('vehicles', VehicleController::class);
 
     Route::get('trash', 'InventoryBinController@index');
     Route::post('trash', 'InventoryBinController@restore');

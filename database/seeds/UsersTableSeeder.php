@@ -30,12 +30,21 @@ class UsersTableSeeder extends Seeder
                 'password' => 'rich'
             ],
         ]);
-        \App\Company::first()->users()->createMany($users);
-//        $branch = \App\Branch::first();
-//        foreach ($users as $user) {
+        $company = \App\Company::first();
+//        $company->users()->createMany($users);
+        $branch = \App\Branch::first();
+//        foreach ($users as $userData) {
 //            /** @var \App\Staff $staff */
 //            $staff = $branch->staff()->create();
-//            $staff->user()->create($user);
+//            $user = $staff->user()->create($userData);
 //        };
+        $company->users()->saveMany(
+            $users->map(function ($userData) {
+                global $branch;
+                /** @var \App\Staff $staff */
+                $staff = $branch->staff()->create();
+                return $staff->user()->create($userData);
+            })
+        );
     }
 }

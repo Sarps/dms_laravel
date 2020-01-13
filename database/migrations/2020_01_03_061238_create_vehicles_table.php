@@ -19,18 +19,19 @@ class CreateVehiclesTable extends Migration
             $table->unsignedBigInteger("staff_id");
             $table->string('reg_no');
             $table->unsignedBigInteger("part_model_id");
-            $table->unsignedBigInteger('part_franchise_id');
+            $table->unsignedBigInteger('part_franchise_id')->nullable();
             $table->string('chasis_no');
-            $table->string('origin');
+            $table->string('origin')->nullable();
             $table->string('engine_no');
-            $table->string('colour');
-            $table->string('odometer_unit');
-            $table->string('note');
+            $table->string('colour')->nullable();
+            $table->string('odometer_unit')->nullable();
+            $table->string('note')->nullable();
             $table->timestamps();
             $table->softDeletes();
 
             $table->foreign('customer_id')->references('id')->on('customers');
             $table->foreign('staff_id')->references('id')->on('staff');
+            $table->foreign('part_model_id')->references('id')->on('part_models');
         });
     }
 

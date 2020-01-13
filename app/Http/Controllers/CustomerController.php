@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Company;
 use App\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,10 +15,12 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-        return Customer::all();
+        /** @var Company $company */
+        $company = $request->user()->company;
+        $company->load('customers.userable');
+        return $company->customers;
     }
 
     /**
@@ -41,6 +44,7 @@ class CustomerController extends Controller
         $validator = Validator::make($request->all(), array(
             'account_name' => 'required|string',
             'name' => 'required|string',
+            'email' => 'required|string|unique:users,id',
             'address' => 'required|string',
             'mobile' => 'required|string',
             'telephone' => 'required|string',
@@ -49,13 +53,13 @@ class CustomerController extends Controller
             'credit_limit' => 'required|numeric',
             'tax_type' => 'required|string',
             'tax_perc' => 'required|numeric',
-            'status' => 'required|string',
+            'status' => 'required|string'
         ));
         $validator->validate();
 
         $customer = Customer::create($request->except(['name', 'email', 'password']));
         $user = $customer->user()->create($request->only(['name', 'email', 'password']));
-        Auth::user()->company();
+        Auth::user()->company->users()->save($user);
 
         return $customer;
     }
@@ -102,6 +106,6 @@ class CustomerController extends Controller
      */
     public function destroy(Customer $customer)
     {
-        //
+        $customer->delete();
     }
 }
