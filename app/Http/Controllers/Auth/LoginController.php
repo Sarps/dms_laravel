@@ -56,6 +56,7 @@ class LoginController extends Controller
         $user->api_token = Str::uuid();
         $user->save();
         $user->load('company');
+        $user->makeVisible('api_token');
         return $user;
     }
 

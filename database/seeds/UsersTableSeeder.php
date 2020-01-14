@@ -39,8 +39,7 @@ class UsersTableSeeder extends Seeder
 //            $user = $staff->user()->create($userData);
 //        };
         $company->users()->saveMany(
-            $users->map(function ($userData) {
-                global $branch;
+            $users->map(function ($userData) use ($branch) {
                 /** @var \App\Staff $staff */
                 $staff = $branch->staff()->create();
                 return $staff->user()->create($userData);
