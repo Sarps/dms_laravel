@@ -77,4 +77,12 @@ class Vehicle extends Model
     {
         return $this->belongsTo(Staff::class);
     }
+
+    public function model () {
+        return $this->belongsTo(PartModel::class, 'part_model_id');
+    }
+
+    public function franchise () {
+        return $this->belongsTo(PartFranchise::class);
+    }
 }

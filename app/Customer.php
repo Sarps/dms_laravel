@@ -62,6 +62,10 @@ class Customer extends Model
         return $this->morphOne(User::class, 'userable');
     }
 
+    public function vehicles() {
+        return $this->hasMany(Vehicle::class);
+    }
+
     public function contact()
     {
         return $this->belongsTo(Staff::class, 'contact_person');

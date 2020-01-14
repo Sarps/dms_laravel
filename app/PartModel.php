@@ -42,4 +42,8 @@ class PartModel extends Model
     public function manufacturer() {
         return $this->belongsTo(PartManufacturer::class, 'manufacturer_id');
     }
+
+    public function vehicles() {
+        return $this->hasMany(Vehicle::class);
+    }
 }

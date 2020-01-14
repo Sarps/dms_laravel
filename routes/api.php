@@ -48,6 +48,7 @@ Route::middleware('auth:api')->group(function () {
 
     Route::apiResource('customers', CustomerController::class);
 
+    Route::get('vehicles/customer/{customer}', 'VehicleController@customerIndex');
     Route::apiResource('vehicles', VehicleController::class);
 
     Route::get('trash', 'InventoryBinController@index');

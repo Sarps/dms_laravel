@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer;
 use App\Vehicle;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -16,6 +17,19 @@ class VehicleController extends Controller
     public function index()
     {
         //
+        return Vehicle::all();
+    }
+
+    /**
+     * Display a listing of the resource for a customer.
+     *
+     * @param Customer $customer
+     * @return \Illuminate\Http\Response
+     */
+    public function customerIndex(Customer $customer)
+    {
+        $customer->load('vehicles.model.manufacturer');
+        return $customer->vehicles;
     }
 
     /**
