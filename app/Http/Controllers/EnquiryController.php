@@ -20,7 +20,11 @@ class EnquiryController extends Controller
     public function index()
     {
         //
-        return Enquiry::with(["partSummary", "supplier"])->withCount("parts")->get();
+        $enquiries = Enquiry::with(["partSummary", "supplier"])->withCount("parts")->get();
+        return $enquiries->map(function ($enquiry) {
+            $enquiry->setAttribute("partSummary", $enquiry->partSummary->take(3));
+            return $enquiry;
+        });
     }
 
     /**
@@ -58,7 +62,7 @@ class EnquiryController extends Controller
         $order = new Order();
         $order->supplier_id = $enquiry->supplier_id;
         $order->user_id = Auth::id();
-        $order->type = "INDIRECT";
+        $order->type = "DIRECT";
         $order->save();
         $order->parts()->attach($enquiry->parts);
         $enquiry->parts()->detach();

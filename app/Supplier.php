@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use \Staudenmeir\EloquentHasManyDeep\HasRelationships as HasExtendedRelationships;
 
 /**
  * App\Supplier
@@ -36,14 +37,31 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Supplier extends Model
 {
-
-    use SoftDeletes;
+    use SoftDeletes, HasExtendedRelationships;
 
     protected $fillable = [
         "name", "address", "contact"
     ];
 
-    public function parts() {
+    public function parts()
+    {
         return $this->hasMany(Part::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function purchases()
+    {
+        return $this
+            ->hasManyDeep(Purchasable::class, [Order::class, Receipt::class], [null, null, 'purchasable_id'])
+            ->where('purchasable_type', Receipt::class);
+    }
+
+    public function receipts()
+    {
+        return $this->hasManyThrough(Receipt::class, Order::class);
     }
 }

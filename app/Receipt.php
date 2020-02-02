@@ -43,4 +43,9 @@ class Receipt extends Model
     public function order() {
         return $this->belongsTo(Order::class);
     }
+
+    public function purchases() {
+        return $this->hasMany(Purchasable::class, 'purchasable_id')
+            ->where('purchasable_type', Receipt::class);
+    }
 }

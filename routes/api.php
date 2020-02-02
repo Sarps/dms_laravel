@@ -13,18 +13,21 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Auth::routes();
 
+Route::get('suppliers/{supplier}/ledger', 'SupplierController@showLedger');
+
 Route::middleware('auth:api')->group(function () {
+
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
 
     Route::apiResource('parts', PartController::class);
 
     Route::apiResource('staff', StaffController::class);
 
+    Route::post('enquiries/transfer/{enquiry}', 'EnquiryController@transfer');
     Route::apiResource('enquiries', EnquiryController::class);
 
     Route::put('orders/confirm/{order}', 'OrderController@confirm');
@@ -40,6 +43,7 @@ Route::middleware('auth:api')->group(function () {
     Route::apiResource('companies', CompanyController::class);
 
     Route::get('suppliers/dt', 'SupplierController@datatables');
+    Route::get('suppliers/ledger', 'SupplierController@ledger');
     Route::apiResource('suppliers', SupplierController::class);
 
     Route::apiResource('categories', CategoryController::class);

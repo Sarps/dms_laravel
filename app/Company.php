@@ -52,6 +52,10 @@ class Company extends Model implements HasMedia
         "name", "address", "contact", "motto", "skin"
     ];
 
+    public function image() {
+        return $this->morphOne(config('medialibrary.media_model'), 'model');
+    }
+
     public function branches() {
         return $this->hasMany(Branch::class);
     }

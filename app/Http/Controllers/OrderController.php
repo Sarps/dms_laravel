@@ -20,13 +20,21 @@ class OrderController extends Controller
     public function index()
     {
         //
-        return Order::doesntHave('receipts')->with(["partSummary", "supplier"])->withCount("parts")->get();
+        $orders = Order::doesntHave('receipts')->with(["partSummary", "supplier"])->withCount("parts")->get();
+        return $orders->map(function ($enquiry) {
+            $enquiry->setAttribute("partSummary", $enquiry->partSummary->take(3));
+            return $enquiry;
+        });
     }
 
     public function backorders()
     {
         //
-        return Order::has('receipts')->with(["partSummary", "supplier"])->withCount("parts")->get();
+        $orders = Order::has('receipts')->with(["partSummary", "supplier"])->withCount("parts")->get();
+        return $orders->map(function ($enquiry) {
+            $enquiry->setAttribute("partSummary", $enquiry->partSummary->take(3));
+            return $enquiry;
+        });
     }
 
     /**

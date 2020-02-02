@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Supplier;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
 class SupplierController extends Controller
@@ -22,6 +23,20 @@ class SupplierController extends Controller
         return Supplier::paginate($request->get('per_page'));
     }
 
+    public function ledger()
+    {
+        $suppliers = Supplier::with(['purchases' => function ($query) {
+            $query->selectRaw('sum(purchasables.price * purchasables.delivered) as total')
+            ->groupBy("laravel_through_key");
+        }])->withCount(['orders', 'receipts'])->get();
+        return $suppliers->map(function ($supplier) {
+            $f = $supplier->purchases->first();
+            $supplier->setRelation('purchases', null);
+            $supplier->setAttribute('total', $f ? $f->total : 0);
+            return $supplier;
+        });
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -35,7 +50,7 @@ class SupplierController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -52,7 +67,7 @@ class SupplierController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Supplier  $supplier
+     * @param \App\Supplier $supplier
      * @return \Illuminate\Http\Response
      */
     public function show(Supplier $supplier)
@@ -67,10 +82,16 @@ class SupplierController extends Controller
         return $supplier;
     }
 
+    public function showLedger(Supplier $supplier)
+    {
+        $supplier->load(['receipts.parts', 'receipts.order']);
+        return $supplier;
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Supplier  $supplier
+     * @param \App\Supplier $supplier
      * @return \Illuminate\Http\Response
      */
     public function edit(Supplier $supplier)
@@ -81,8 +102,8 @@ class SupplierController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Supplier  $supplier
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Supplier $supplier
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Supplier $supplier)
@@ -99,7 +120,7 @@ class SupplierController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Supplier  $supplier
+     * @param \App\Supplier $supplier
      * @return \Illuminate\Http\Response
      */
     public function destroy(Supplier $supplier)

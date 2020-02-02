@@ -16,9 +16,8 @@ class PartController extends Controller
     public function index()
     {
         $parts = Part::with([
-            "manufacturer", "model", "franchise", "category", "supplier", "media"
+            "manufacturer", "model", "franchise", "category", "supplier", "image"
         ])->get();
-        $parts->load("image");
         $parts = $parts->map(function ($part) {
             $part->setAttribute('image_url', $part->image == null ? '' : $part->image->getFullUrl());
             return $part;

@@ -46,7 +46,7 @@ class Enquiry extends Model
     }
 
     public function partSummary() {
-        return $this->parts()->take(3);
+        return $this->parts();
     }
 
     public function supplier() {

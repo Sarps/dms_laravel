@@ -55,8 +55,11 @@ class LoginController extends Controller
         $user = Auth::user();
         $user->api_token = Str::uuid();
         $user->save();
-        $user->load('company');
         $user->makeVisible('api_token');
+
+        $user->load('company.image');
+        $user->company->setAttribute('image_url', $user->company->image == null ? '' : $user->company->image->getFullUrl());
+
         return $user;
     }
 
