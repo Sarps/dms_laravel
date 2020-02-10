@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\ServiceCenter;
+use App\Serviceable;
 use Illuminate\Http\Request;
 
-class ServiceCenterController extends Controller
+class ServiceableController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ServiceCenterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\ServiceCenter  $serviceCenter
+     * @param  \App\Serviceable  $serviceable
      * @return \Illuminate\Http\Response
      */
-    public function show(ServiceCenter $serviceCenter)
+    public function show(Serviceable $serviceable)
     {
         //
     }
@@ -52,10 +52,10 @@ class ServiceCenterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\ServiceCenter  $serviceCenter
+     * @param  \App\Serviceable  $serviceable
      * @return \Illuminate\Http\Response
      */
-    public function edit(ServiceCenter $serviceCenter)
+    public function edit(Serviceable $serviceable)
     {
         //
     }
@@ -64,10 +64,10 @@ class ServiceCenterController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ServiceCenter  $serviceCenter
+     * @param  \App\Serviceable  $serviceable
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ServiceCenter $serviceCenter)
+    public function update(Request $request, Serviceable $serviceable)
     {
         //
     }
@@ -75,10 +75,10 @@ class ServiceCenterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ServiceCenter  $serviceCenter
+     * @param  \App\Serviceable  $serviceable
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ServiceCenter $serviceCenter)
+    public function destroy(Serviceable $serviceable)
     {
         //
     }

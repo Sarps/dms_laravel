@@ -2,31 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35801ece-9615-414b-b888-170385cdb2e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ServiceCenterController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ServiceCostingController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ServiceCenter.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ServiceCosting.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/ServiceCenterFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/ServiceCostingFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_02_211238_create_service_centers_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_02_211251_create_service_costings_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/ServiceCenterSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/ServiceCostingSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dms_backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dms_backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ServiceableController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Job.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/ServiceableFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_02_203728_create_jobs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/JobSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/34f46926-452f-414a-8693-6f61addc3d14.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/34f46926-452f-414a-8693-6f61addc3d14.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/SARPONG.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/SARPONG.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Company.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Company.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Enquiry.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Enquiry.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EnquiryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EnquiryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Receipt.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Receipt.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Supplier.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Supplier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ServiceCenterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/JobController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ServiceCenter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Serviceable.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ServiceCenterFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/JobFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_02_211238_create_service_centers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_04_032200_create_serviceables_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_02_211251_create_service_costings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_02_211251_create_service_costings_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/ServiceCenterSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ServiceableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -257,22 +247,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@8e49deab" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@8e49deab" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@ab11eb4" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@8e49deab" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1a206cfc" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -313,7 +288,12 @@
       <workItem from="1579197650082" duration="110000" />
       <workItem from="1579366967237" duration="1365000" />
       <workItem from="1579417489097" duration="19000" />
-      <workItem from="1580593588938" duration="13679000" />
+      <workItem from="1580593588938" duration="14075000" />
+      <workItem from="1580769416524" duration="6016000" />
+      <workItem from="1581052454000" duration="628000" />
+      <workItem from="1581164538417" duration="1495000" />
+      <workItem from="1581234831601" duration="4832000" />
+      <workItem from="1581298824503" duration="637000" />
     </task>
     <servers />
   </component>

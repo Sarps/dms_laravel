@@ -58,5 +58,9 @@ Route::middleware('auth:api')->group(function () {
     Route::get('trash', 'InventoryBinController@index');
     Route::post('trash', 'InventoryBinController@restore');
 
+
 });
+
+Route::apiResource('jobs', JobController::class);
+
 

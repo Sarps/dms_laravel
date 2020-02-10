@@ -15,6 +15,13 @@ class CreateServiceCostingsTable extends Migration
     {
         Schema::create('service_costings', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->unsignedBigInteger('job_id');
+            $table->unsignedBigInteger('job_status_id');
+            $table->unsignedBigInteger('vat_type_id')->nullable();
+            $table->double('rate')->nullable();
+            $table->string('description')->nullable();
+
             $table->timestamps();
         });
     }

@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\ServiceCenter;
+use App\Serviceable;
 use Faker\Generator as Faker;
 
-$factory->define(ServiceCenter::class, function (Faker $faker) {
+$factory->define(Serviceable::class, function (Faker $faker) {
     return [
         //
     ];
